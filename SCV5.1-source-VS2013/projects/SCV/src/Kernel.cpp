@@ -606,6 +606,12 @@ void Kernel::addComponent(Component *object) {
    }
 }
 
+void Kernel::addComponent(Component *object, std::string tag)
+{
+	if (!components.emplace(tag, object).second)
+		std::cout << "Tag " << tag << " is not unique." << std::endl;
+}
+
 //! Removes \c object from any container it is in.
 void Kernel::removeComponent(Component *object) {
    if (std::find(Kernel::getInstance()->_objects.begin(), Kernel::getInstance()->_objects.end(), object) != Kernel::getInstance()->_objects.end()) {

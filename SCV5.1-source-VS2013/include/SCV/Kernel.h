@@ -32,6 +32,9 @@ email: pozzer@inf.ufsm.br
 
 #include "ColorScheme.h"
 
+
+#include <unordered_map>
+
 namespace scv {
 
 /*! \defgroup util Util */
@@ -104,6 +107,46 @@ class Kernel : public Singleton<Kernel>, public SCVCallbacks
 		void initOpenGL(int argc, char* argv[]);
 
 		void updateFramesPerSecond(void);
+
+
+
+		template <typename Type>
+		Type* getComponent(std::string tag)
+		{
+			/*for each (Component* c in _objects)
+			{
+			// Check if component type
+			if (dynamic_cast<Type*>(c))
+			{
+			return (Type*)c;
+			}
+			}
+			return NULL;*/
+
+			std::unordered_map<std::string, scv::Component*>::const_iterator got = components.find(tag);
+
+
+
+			// Se a variavel got aponta para o fim do map, o componente não foi encontrado.
+			if (got == components.end())
+			{
+				std::cout << "Component not found.";
+			}
+			else
+			{
+				// Check if component type
+				if (dynamic_cast<Type*>(got->second))
+				{
+					return (Type*)got->second;
+				}
+			}
+			return NULL;
+		}
+
+		std::unordered_map<std::string, scv::Component*> components;
+		void addComponent(Component *object, std::string tag);
+
+
 
 
 	
