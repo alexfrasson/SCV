@@ -3,27 +3,22 @@
 namespace scv {
 
 FontFreeType::FontFreeType(void) {
-	fontName = "UbuntuMono.ttf";
-	//fontName = "Instruction.ttf";
+	fontName = "UbuntuMono.ttf"; // Standard font name.
 	createFont();
 }
 
 void FontFreeType::display(std::string string, int X, int Y, FreeTypeColor color)
 {
+	display(string, X, Y, color, 14);
+}
+
+void FontFreeType::display(std::string string, int X, int Y, FreeTypeColor color, int fontSize)
+{
 	glPushMatrix();
 	glColor3f(color.r, color.g, color.b);
 	glRasterPos2d(X + 1, Y + 11); // Positioning correction.
-	font->Render(string.c_str());
-	glPopMatrix();	
-}
-
-void FontFreeType::display(std::string string, int X, int Y, int fontsize)
-{
-	glPushMatrix();
-	glRasterPos2d(X + 1, Y + 11); // Positioning correction.
-	font->FaceSize(fontsize);
-	font->Render(string.c_str());
-	font->FaceSize(14);
+	font->FaceSize(fontSize);
+	font->Render(string.c_str());	
 	glPopMatrix();
 }
 
@@ -53,9 +48,7 @@ void FontFreeType::createFont()
 	font = new FTGLPixmapFont(fontName.c_str());
 	// Check error.
 	if (font->Error())
-		printf("Font error: Not detected.\n");
-	// Font size.
-	font->FaceSize(14);
+		printf("Font error: '%s' was not detected.\n", fontName);
 }
 
 } // namespace scv

@@ -26,9 +26,14 @@ class FontFreeType : public Singleton<FontFreeType> {
 friend class Singleton<FontFreeType>;
 
 public:
+	// Display.
 	void display(std::string string, int X, int Y, FreeTypeColor color);
-	void display(std::string string, int X, int Y, int fontsize);
+	void display(std::string string, int X, int Y, FreeTypeColor color, int fontSize);
+
+	// Setters.
 	void setFontName(std::string fontName);
+
+	// Getters.
 	float getAvgCharWidth(std::string string);
 	float getHeight();
 	float getStringLength(std::string string);
@@ -37,9 +42,9 @@ private:
 	FTGLPixmapFont *font;
 	std::string fontName;
 
-	FontFreeType(void);
-
+	FontFreeType();
 	void createFont();	
+	void display();
 };
 
 class FreeTypeColor

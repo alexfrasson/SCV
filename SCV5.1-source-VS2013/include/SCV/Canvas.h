@@ -52,8 +52,9 @@ public:
    void color(float r, float g, float b);
    void clear(float r, float g, float b);
 
-   //draw a text
-   //void text(int x, int y, const char *t);
+	// draw a text
+	void text(int X, int Y, const char *text);
+	void text(int X, int Y, const char *text, FreeTypeColor color, int fontSize);
 };
 
 } // namespace scv

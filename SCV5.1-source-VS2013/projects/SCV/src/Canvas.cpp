@@ -187,17 +187,16 @@ void Canvas::polygonFill(float vx[], float vy[], int elems)
 
 }
 
-/*void Canvas::text(int x, int y, const char *t)
+void Canvas::text(int X, int Y, const char *text)
 {
-    int tam = strlen(t);
-    int c;
+	scv::FontFreeType::getInstance()->display(text, X, Y, FreeTypeColor(0,0,0));
+}
 
-    for(c=0; c<tam; c++)
-    {
-      glRasterPos2i(x + c*10, y);
-      //glutBitmapCharacter(GLUT_BITMAP_8_BY_13, t[c]);
-    }
-}*/
+void Canvas::text(int X, int Y, const char *text, FreeTypeColor color, int fontSize)
+{
+	scv::FontFreeType::getInstance()->display(text, X, Y, color, fontSize);
+}
+
 
 void Canvas::clear(float r, float g, float b)
 {
