@@ -134,6 +134,8 @@ protected:
    bool isInsideSide(Component::Side side, const Point &evtPosition);
 
    ContextMenu *_contextMenu;
+private:
+	int getFiveMultiple(int value);
 };
 
 ///////////////////////////////////////////////////////////

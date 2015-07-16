@@ -153,19 +153,19 @@ void Component::processMouse(const scv::MouseEvent &evt) {
       if (_isHResizable) {
          if (_resizing[LEFT]) {
             int width = getWidth();
-            setWidth(getWidth() + getAbsolutePosition().x - evtPosition.x);            
+            setWidth(getFiveMultiple(getWidth() + getAbsolutePosition().x - evtPosition.x));            
             setAbsolutePosition(Point(getAbsolutePosition().x + width - getWidth(), getAbsolutePosition().y));
          } else if (_resizing[RIGHT]) {            
-            setWidth(evtPosition.x - currPosition.x);
+				setWidth(getFiveMultiple(evtPosition.x - currPosition.x));
          }
       }
       if (_isVResizable) {
          if (_resizing[TOP]) {
             int height = getHeight();
-            setHeight(getHeight() + getAbsolutePosition().y - evtPosition.y);
+				setHeight(getFiveMultiple(getHeight() + getAbsolutePosition().y - evtPosition.y));
             setAbsolutePosition(Point(getAbsolutePosition().x, getAbsolutePosition().y + height - getHeight()));         
          } else if (_resizing[BOTTOM]) {
-            setHeight(evtPosition.y - currPosition.y);
+				setHeight(getFiveMultiple(evtPosition.y - currPosition.y));
          }
       }
       if (kernel->lockMouseUse(this)) setResizingCursor();
@@ -470,6 +470,19 @@ void Component::setMaximumSize(const scv::Point &size) {
    if (size >= getMinimumSize() && size >= getPreferredSize() || size.x <= 0 ||  size.y <= 0) {      
       _maximumSize = size;
    }
+}
+
+int Component::getFiveMultiple(int value)
+{
+	int rest = value % 5, answer;
+
+	if (rest == 0)
+		answer = value;
+	else if (rest <= 2)
+		answer = value - rest;
+	else if (rest <= 4)
+		answer = value + (5 - rest);
+	return answer;
 }
 
 } // namespace scv
