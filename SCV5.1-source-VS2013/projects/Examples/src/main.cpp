@@ -27,6 +27,7 @@ void example6_main();
 void example7_main();
 void example8_main();
 void example9_main();
+void example10_main();
 
 Example examples_list[] = {
    {"Hello World!", example1_main},
@@ -37,9 +38,10 @@ Example examples_list[] = {
    {"Canvas GL", example6_main},
    {"Canvas Basic", example7_main},
    {"GenericTree", example8_main},
-   {"Group Layouts", example9_main}
+   {"Group Layouts", example9_main},
+	{"Canvas Text", example10_main}
 };
-static const unsigned int NUM_EXAMPLES = 9;
+static const unsigned int NUM_EXAMPLES = 10;
 
 int main()
 {
