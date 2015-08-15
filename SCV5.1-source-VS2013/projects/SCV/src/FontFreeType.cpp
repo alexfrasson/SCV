@@ -3,8 +3,7 @@
 namespace scv {
 
 FontFreeType::FontFreeType(void) {
-	fontName = "UbuntuMono.ttf"; // Standard font name.
-	createFont();
+	setFontName("UbuntuMono.ttf"); // Standard font name.	
 }
 
 void FontFreeType::display(std::string string, int X, int Y, FreeTypeColor color)
