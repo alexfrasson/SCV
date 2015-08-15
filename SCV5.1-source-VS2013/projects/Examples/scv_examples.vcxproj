@@ -79,7 +79,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\example10.cpp" />
     <ClCompile Include="src\example4.cpp" />
     <ClCompile Include="src\example5.cpp" />
     <ClCompile Include="src\example6.cpp" />
