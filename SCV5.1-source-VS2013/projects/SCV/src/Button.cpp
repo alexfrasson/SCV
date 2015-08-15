@@ -6,30 +6,23 @@
 namespace scv {
 
 Button::Button(const scv::Point &p1, const scv::Point &p2, const std::string &str) : Label(p1, p2, str) {
-   _isHResizable = _isVResizable = true;
-   _type = BUTTON;
-
-   setMaximumSize(Point(-1, -1));
-
-   createTexture();
+	initialize();
 }
 
 Button::Button(const scv::Point &p1, unsigned int width, const std::string &str) : Label(p1, Point(p1.x + width, p1.y + 24), str) {
-   _isHResizable = _isVResizable = true;
-   _type = BUTTON;
-
-   setMaximumSize(Point(-1, -1));
-
-   createTexture();
+	initialize();
 }
 
 Button::Button(const scv::Point &p1, const std::string &str) : Label(p1, Point(p1.x + FontFreeType::getInstance()->getStringLength(str) + 10, p1.y + 24), str) {
-   _isHResizable = _isVResizable = true;
-   _type = BUTTON;
+	initialize();
+}
 
-   setMaximumSize(Point(-1, -1));
-
-   createTexture();
+void Button::initialize()
+{
+	_isHResizable = _isVResizable = true;
+	_type = BUTTON;
+	setMaximumSize(Point(-1, -1));
+	createTexture();
 }
 
 void Button::display(void) {
@@ -78,6 +71,8 @@ void Button::display(void) {
 
    scissor->popScissor();
 }
+
+
 
 void Button::createTexture(void) {
    Kernel *kernel = Kernel::getInstance();

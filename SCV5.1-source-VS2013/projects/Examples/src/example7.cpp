@@ -52,6 +52,7 @@ private:
 
 void MyCanvas::render()
 {
+	clear(0.8, 0.8, 0.8);
    color(1,0,0);
    rectf(pos.x + 10, pos.y+ 10, 200, 200);
    color(0,1,0);
@@ -61,7 +62,7 @@ void MyCanvas::render()
    img->display();
 
    circleFillf(150, 150, 40, 3 + (int)(pos.x/100.0));
-   //text(100,100,"Press and drag to resize");
+   text(130,50,"Press and drag to resize");
 
    //desenha um relogio
    int x = (int)(cos(time) * 150);
@@ -106,7 +107,7 @@ void example7_main() {
    scv::Kernel* kernel = scv::Kernel::getInstance();
 
    // seta o tamanho da janela.
-   kernel->setWindowSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+   kernel->setWindowSize(WINDOW_WIDTH, WINDOW_HEIGHT - 100);
 
    // Cria e adiciona nosso canvas a janela principal.
    MyCanvas* canvas = new MyCanvas(scv::Point(0, 0));

@@ -37,17 +37,17 @@ private:
 
 void example3_main() {
 	scv::Kernel* kernel = scv::Kernel::getInstance();
-	kernel->setWindowSize(500, 500);
+	kernel->setWindowSize(400, 450);
 
    //Criar um novo Textfield para ser usado junto da classe
-   scv::TextField* tf = new scv::TextField(scv::Point(100, 200), 100, "Type a text");
+   scv::TextField* tf = new scv::TextField(scv::Point(200, 300), 100, "Type a text");
    scv::Kernel::getInstance()->addComponent(tf);
 
    //Criar um novo Textbox para ser usado junto da classe
-   scv::TextBox* tb = new scv::TextBox(scv::Point(0, 0), scv::Point(200, 180), "");
+   scv::TextBox* tb = new scv::TextBox(scv::Point(100, 100), scv::Point(300, 280), "");
    scv::Kernel::getInstance()->addComponent(tb);
 
-   MyButton *but = new MyButton(scv::Point(0, 200), scv::Point(100, 220), tf, tb);
+   MyButton *but = new MyButton(scv::Point(100, 300), scv::Point(200, 320), tf, tb);
    scv::Kernel::getInstance()->addComponent(but);
 
 	kernel->setFramesPerSecond(60);

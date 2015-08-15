@@ -65,16 +65,16 @@ void example2_main() {
 	scv::Kernel* kernel = scv::Kernel::getInstance();
 
    scv::ColorScheme* scheme = scv::ColorScheme::getInstance();
-   scheme->loadScheme(scv::ColorScheme::CLEAN);
+   scheme->loadScheme(scv::ColorScheme::WARCRAFT);
 
-   kernel->setWindowSize(500, 500);
+   kernel->setWindowSize(400, 200);
 
-   scv::TextField *tf = new scv::TextField(scv::Point(0,0),240,"Center");
+   scv::TextField *tf = new scv::TextField(scv::Point(80,70),240,"Center");
    scv::Kernel::getInstance()->addComponent(tf);
 
-   MyLeftButton *bLeft = new MyLeftButton(scv::Point(0,20),"Set to left", tf);
-   MyCenterButton *bCenter = new MyCenterButton(scv::Point(80,20),"Set to center", tf);
-   MyRightButton *bRight = new MyRightButton(scv::Point(160,20),"Set to right", tf);
+	MyLeftButton *bLeft = new MyLeftButton(scv::Point(80,90), "Left", tf);
+   MyCenterButton *bCenter = new MyCenterButton(scv::Point(160,90),"Center", tf);
+   MyRightButton *bRight = new MyRightButton(scv::Point(240,90),"Right", tf);
    scv::Kernel::getInstance()->addComponent(bLeft);
    scv::Kernel::getInstance()->addComponent(bCenter);
    scv::Kernel::getInstance()->addComponent(bRight);

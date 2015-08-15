@@ -48,7 +48,7 @@ void FontFreeType::createFont()
 	font = new FTGLPixmapFont(fontName.c_str());
 	// Check error.
 	if (font->Error())
-		printf("Font error: '%s' was not detected.\n", fontName);
+		printf("Font error: '%s' was not detected.\n", fontName.c_str());
 }
 
 } // namespace scv

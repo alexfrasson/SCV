@@ -19,7 +19,7 @@ public:
    MyCanvas(const scv::Point& canvas_pos) : scv::Canvas(canvas_pos, canvas_pos + scv::Point(WINDOW_WIDTH, WINDOW_HEIGHT)),
       pos(WINDOW_WIDTH/2, WINDOW_HEIGHT/2), cur_speed(2, 2), bg_color(.5f, .2f, .2f)
    {
-
+		quadAngle = 0;
    }
 
    // Muda a cor de fundo do canvas. (Esta funcao eh chamada pelo menu.)
@@ -38,6 +38,7 @@ public:
 private:
    static const int RECT_SIZE = 8;
    static const int TRIANGLE_SIZE = 16;
+	float quadAngle;
 
    // Posicao atual dos triangulos
    scv::Point pos;
@@ -52,24 +53,34 @@ void MyCanvas::render() {
    glClearColor(bg_color[0], bg_color[1], bg_color[2], bg_color[3]);
    glClear(GL_COLOR_BUFFER_BIT);
 
-   // Desenha uma linha (com cor RGB(0, 0, 1)) do centro do canvas ate a
-   // posicao dos triangulos.
+	// Desenha um texto.
+	text(10, 15, "Acesse o menu de cores acima.");	
+
+   // Desenha uma linha (com cor RGB(0, 0, 1)) do centro do canvas até a
+   // posição dos triângulos.
    glBegin(GL_LINES);
       glColor3f(0.f, 0.f, 1.f);
       glVertex2i(WINDOW_WIDTH/2, WINDOW_HEIGHT/2);
       glVertex2i(pos.x, pos.y);
    glEnd();
 
-   // Desenha um retangulo no centro do canvas.
+   // Desenha um retângulo no centro do canvas.
+	glPushMatrix();	
+	// Tranlação para o centro da tela.
+	glTranslated(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2, 0);
+	// Rotação.
+	glRotated(quadAngle++, 0, 0, 1);
    glBegin(GL_QUADS);
       glColor3f(0.f, 1.f, 0.f);
-      glVertex2i(WINDOW_WIDTH/2 - RECT_SIZE, WINDOW_HEIGHT/2 - RECT_SIZE);
-      glVertex2i(WINDOW_WIDTH/2 + RECT_SIZE, WINDOW_HEIGHT/2 - RECT_SIZE);
-      glVertex2i(WINDOW_WIDTH/2 + RECT_SIZE, WINDOW_HEIGHT/2 + RECT_SIZE);
-      glVertex2i(WINDOW_WIDTH/2 - RECT_SIZE, WINDOW_HEIGHT/2 + RECT_SIZE);
+		// Retângulo definido na origem.
+		glVertex2i(-RECT_SIZE, -RECT_SIZE);
+		glVertex2i(RECT_SIZE, -RECT_SIZE);
+		glVertex2i(RECT_SIZE, RECT_SIZE);
+		glVertex2i(-RECT_SIZE, RECT_SIZE);
    glEnd();
+	glPopMatrix();
 
-   // Desenha os dois triangulos.
+   // Desenha os dois triângulos.
    glBegin(GL_TRIANGLES);
       glColor3f(1.f, 1.f, 1.f);
       glVertex2i(pos.x - TRIANGLE_SIZE, pos.y + TRIANGLE_SIZE);
@@ -161,11 +172,12 @@ void example6_main() {
    scv::ColorScheme* scheme = scv::ColorScheme::getInstance();
 
    // Carrega o equema de cores e seta o tamanho da janela.
-   scheme->loadScheme(scv::ColorScheme::WINDOWS);
-   kernel->setWindowSize(WINDOW_WIDTH, WINDOW_HEIGHT + 22);
+   scheme->loadScheme(scv::ColorScheme::WARCRAFT);
+   kernel->setWindowSize(WINDOW_WIDTH, WINDOW_HEIGHT + 22);	
 
    // Cria e adiciona nosso canvas a janela principal.
    MyCanvas* canvas = new MyCanvas(scv::Point(0, 22));
+	canvas->setBackground(scv::Color4f(.5, .5, .5));
    kernel->addComponent(canvas);
 
    // Cria e adiciona a barra de menu e itens

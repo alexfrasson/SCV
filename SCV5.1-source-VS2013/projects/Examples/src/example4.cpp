@@ -30,10 +30,11 @@ private:
 
 void example4_main() {
 	scv::Kernel* kernel = scv::Kernel::getInstance();
-	kernel->setWindowSize(500, 500);
+	kernel->setWindowSize(600, 275);
 
-   scv::ProgressBar* progress_bar = new scv::ProgressBar(scv::Point(5, 150), scv::Point(495, 200), 50.0);
+   scv::ProgressBar* progress_bar = new scv::ProgressBar(scv::Point(55, 100), scv::Point(545, 150), 50.0);
    MySlider* slider = new MySlider(progress_bar);
+	slider->setAbsolutePosition(scv::Point(55, 175));
 
    // Adiciona os componentes ao Kernel
    kernel->addComponent(progress_bar);

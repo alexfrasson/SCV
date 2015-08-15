@@ -27,15 +27,24 @@ private:
 
 void example5_main() {
 	scv::Kernel* kernel = scv::Kernel::getInstance();
-	kernel->setWindowSize(300, 300);
+	
+	kernel->setWindowSize(300, 250);
 
+
+
+	scv::Label *label = new scv::Label(scv::Point(20, 40), "Escolha sua cor:");
+	scv::Kernel::getInstance()->addComponent(label);
+   MyRadioButton * b1 = new MyRadioButton(scv::Point(20, 80),      "Vermelho");	
+   MyRadioButton * b2 = new MyRadioButton(scv::Point(20, 80+30),   "Verde");
+   MyRadioButton * b3 = new MyRadioButton(scv::Point(20, 80+30*2), "Azul");
+   MyRadioButton * b4 = new MyRadioButton(scv::Point(20, 80+30*3), "Branco");
+
+	/*
+	Para criar um grupo de botões, é necessário criar uma 
+	instância de 'ButtonGroup' e registrar cada botão
+	à instância criada.
+	*/
    scv::ButtonGroup * bgroup = new scv::ButtonGroup();
-   
-   MyRadioButton * b1 = new MyRadioButton(scv::Point(20, 20),      "Button 1");
-   MyRadioButton * b2 = new MyRadioButton(scv::Point(20, 20+30),   "Button 2");
-   MyRadioButton * b3 = new MyRadioButton(scv::Point(20, 20+30*2), "Button 3");
-   MyRadioButton * b4 = new MyRadioButton(scv::Point(20, 20+30*3), "Button 4");
-
    b1->registerButtonGroup(bgroup);
    b2->registerButtonGroup(bgroup);
    b3->registerButtonGroup(bgroup);
