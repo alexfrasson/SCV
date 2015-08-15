@@ -46,7 +46,7 @@ void Label::setString(const std::string& str) {
 
 void Label::display(void) {	
 	static FontFreeType *freeType = FontFreeType::getInstance();
-	freeType->display(_str, getAbsolutePosition().x, getAbsolutePosition().y, scv::FreeTypeColor(1, 1, 1));
+	freeType->display(_str, getAbsolutePosition().x, getAbsolutePosition().y, scv::FontColor(1, 1, 1));
 }
 
 } // namespace scv

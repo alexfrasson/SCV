@@ -54,7 +54,7 @@ public:
 
 	// draw a text
 	void text(int X, int Y, const char *text);
-	void text(int X, int Y, const char *text, FreeTypeColor color, int fontSize);
+	void text(int X, int Y, const char *text, FontColor color, int fontSize);
 };
 
 } // namespace scv

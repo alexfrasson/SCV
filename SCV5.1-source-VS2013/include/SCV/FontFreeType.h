@@ -20,23 +20,23 @@ namespace scv {
 * \ingroup internal
 */
 
-class FreeTypeColor;
+class FontColor;
 
 class FontFreeType : public Singleton<FontFreeType> {
 friend class Singleton<FontFreeType>;
 
 public:
 	// Display.
-	void display(std::string string, int X, int Y, FreeTypeColor color);
-	void display(std::string string, int X, int Y, FreeTypeColor color, int fontSize);
+	void display(std::string string, int X, int Y, FontColor color);
+	void display(std::string string, int X, int Y, FontColor color, int fontSize);
 
 	// Setters.
 	void setFontName(std::string fontName);
 
 	// Getters.
 	float getAvgCharWidth(std::string string);
-	float getHeight();
 	float getStringLength(std::string string);
+	float getHeight();
 
 private:	
 	FTGLPixmapFont *font;
@@ -44,15 +44,14 @@ private:
 
 	FontFreeType();
 	void createFont();	
-	void display();
 };
 
-class FreeTypeColor
+class FontColor
 {
 public:
 	float r, g, b; // 0.0 to 1.0
 
-	FreeTypeColor(float r, float g, float b)
+	FontColor(float r, float g, float b)
 	{
 		this->r = r;
 		this->g = g;

@@ -75,7 +75,7 @@ void VistaMenuStyle::drawItem(const scv::ContextMenu *menu, int index) const {
    _cTexture->disable();
 
    for (int i = 0; i < menus.size(); i++) {
-		StaticLabel::display(_leftBorder + pos.x + _borderHeight, pos.y + i * _menuHeight + _borderHeight, menus[i]->getString(), scv::FreeTypeColor(0, 0, 0));
+		StaticLabel::display(_leftBorder + pos.x + _borderHeight, pos.y + i * _menuHeight + _borderHeight, menus[i]->getString(), scv::FontColor(0, 0, 0));
    }
 }
 

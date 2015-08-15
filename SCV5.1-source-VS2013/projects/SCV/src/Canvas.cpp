@@ -189,10 +189,10 @@ void Canvas::polygonFill(float vx[], float vy[], int elems)
 
 void Canvas::text(int X, int Y, const char *text)
 {
-	scv::FontFreeType::getInstance()->display(text, X, Y, FreeTypeColor(0,0,0));
+	scv::FontFreeType::getInstance()->display(text, X, Y, FontColor(0,0,0));
 }
 
-void Canvas::text(int X, int Y, const char *text, FreeTypeColor color, int fontSize)
+void Canvas::text(int X, int Y, const char *text, FontColor color, int fontSize)
 {
 	scv::FontFreeType::getInstance()->display(text, X, Y, color, fontSize);
 }

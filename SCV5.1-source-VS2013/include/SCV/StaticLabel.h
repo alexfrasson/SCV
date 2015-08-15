@@ -16,7 +16,7 @@ namespace scv {
 
 namespace StaticLabel {
 
-	void display(int x, int y, const std::string &label, FreeTypeColor color);
+	void display(int x, int y, const std::string &label, FontColor color);
 
    void display(int x, int y, const std::string &label, 
       const Color4f &color = ColorScheme::getInstance()->getColor(ColorScheme::FONT));

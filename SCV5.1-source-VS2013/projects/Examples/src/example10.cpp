@@ -46,9 +46,9 @@ void MyCanvas::render()
 	else
 		text(65, Y * 1.6, "Instruction");
 	text(X, Y * 3, "- Texto normal, sem formatacao.");
-	text(X, Y * 4, "- Texto vermelho com tamanho original.", scv::FreeTypeColor(1, 0, 0), 14);
-	text(X, Y * 5, "- Texto azul com tamanho customizado.", scv::FreeTypeColor(0, 0, 1), 18);
-	text(X, Y * 6, "- Texto amarelo com tamanho customizado.", scv::FreeTypeColor(1, 1, 0), 10);
+	text(X, Y * 4, "- Texto vermelho com tamanho original.", scv::FontColor(1, 0, 0), 14);
+	text(X, Y * 5, "- Texto azul com tamanho customizado.", scv::FontColor(0, 0, 1), 18);
+	text(X, Y * 6, "- Texto amarelo com tamanho customizado.", scv::FontColor(1, 1, 0), 10);
 }
 
 void example10_main() {

@@ -5,7 +5,7 @@ namespace scv {
 
 namespace StaticLabel {
 
-void display(int x, int y, const std::string &label, FreeTypeColor color) {
+void display(int x, int y, const std::string &label, FontColor color) {
 	static FontFreeType *freeType = FontFreeType::getInstance();
 	freeType->display(label, x, y, color);
 }
@@ -16,7 +16,7 @@ void display(int x, int y, const std::string &label, const Color4f &color) {
 
 void display(const Point &translate, const std::string &label, const Color4f &color) {
 	static FontFreeType *freeType = FontFreeType::getInstance();	
-	freeType->display(label, translate.x, translate.y, scv::FreeTypeColor(1, 1, 1));
+	freeType->display(label, translate.x, translate.y, scv::FontColor(1, 1, 1));
 }
 
 void display(int x, int y, const std::string &label, int selectStart, int selectEnd, const Color4f &textColor, const Color4f &selectedTextColor, const Color4f &selectionColor) {
@@ -28,7 +28,7 @@ void display(const Point &translate, const std::string &label, int selectStart, 
    static ComponentTexture *cTexture = font->getTexture();
    static ColorScheme *scheme = ColorScheme::getInstance();
 	static FontFreeType *freeType = FontFreeType::getInstance();
-	freeType->display(label, translate.x, translate.y, scv::FreeTypeColor(1, 1, 1));
+	freeType->display(label, translate.x, translate.y, scv::FontColor(1, 1, 1));
 
    if (selectStart > selectEnd)
       std::swap(selectStart, selectEnd);

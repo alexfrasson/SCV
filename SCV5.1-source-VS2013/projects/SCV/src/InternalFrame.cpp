@@ -189,7 +189,7 @@ void InternalFrame::display(void) {
    Scissor::getInstance()->popScissor();
 
    Scissor::getInstance()->pushScissor(Scissor::Info(currPosition.x, kernel->getHeight() - (currPosition.y) - s_borderTop, getWidth() - s_closeWidth - 10, s_borderTop));   
-	StaticLabel::display(currPosition.x + s_borderWidth, currPosition.y + (s_borderTop - FontFreeType::getInstance()->getHeight()) / 2 + 2, _title, scv::FreeTypeColor(0, 0, 0));
+	StaticLabel::display(currPosition.x + s_borderWidth, currPosition.y + (s_borderTop - FontFreeType::getInstance()->getHeight()) / 2 + 2, _title, scv::FontColor(0, 0, 0));
    Scissor::getInstance()->popScissor();
    Scissor::getInstance()->popScissor();
 }
