@@ -84,9 +84,12 @@ void TextBox::display(void) {
     _cTexture->disable();
 
     scissor->pushScissor(Scissor::Info(currPosition.x, kernel->getHeight() - (getHeight() + currPosition.y) + 2, getWidth(), getHeight() - 4));
-    for (int i = _firstLine; i < (_nLines+_firstLine) && i < (_lineIndex.size() - 1); i++)
-        StaticLabel::display(currPosition.x + s_borderWidth / 2 , currPosition.y + 1 + s_borderHeight + (i - _firstLine) * s_lineSpacing, 
-        _str.substr(_lineIndex[i], _lineIndex[i + 1] - _lineIndex[i]), _selectStart - _lineIndex[i], _selectEnd - _lineIndex[i], scheme->getColor(ColorScheme::TEXT));
+	for (int i = _firstLine; i < (_nLines + _firstLine) && i < (_lineIndex.size() - 1); i++)
+	{
+		//std::string s = _str.substr(_lineIndex[i], _lineIndex[i + 1] - _lineIndex[i]);
+		StaticLabel::display(currPosition.x + s_borderWidth / 2, currPosition.y + 1 + s_borderHeight + (i - _firstLine) * s_lineSpacing,
+		_str.substr(_lineIndex[i], _lineIndex[i + 1] - _lineIndex[i]), _selectStart - _lineIndex[i], _selectEnd - _lineIndex[i], scheme->getColor(ColorScheme::TEXT));
+	}
 
 
     if (isFocused() && _receivingCallbacks) {

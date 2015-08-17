@@ -25,7 +25,10 @@ void FontFreeType::display(std::string string, int X, int Y, FontColor color, in
 	glColor3f(color.r, color.g, color.b);
 	glRasterPos2d(X + 1, Y + 11); // Positioning correction.
 	font->FaceSize(fontSize);
-	font->Render(string.c_str());	
+
+	string.erase(std::remove(string.begin(), string.end(), '\n'), string.end());
+
+	font->Render(string.c_str());
 	glPopMatrix();
 }
 
@@ -42,6 +45,8 @@ float FontFreeType::getAvgCharWidth(std::string string)
 
 float FontFreeType::getStringLength(std::string string)
 {	
+	string.erase(std::remove(string.begin(), string.end(), '\n'), string.end());
+
 	return font->Advance(string.c_str(), string.length(), FTPoint());
 }
 
