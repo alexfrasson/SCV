@@ -172,7 +172,7 @@ void ColorPicker::processMouse(const scv::MouseEvent &evt) {
                   _currentColor =  ColorRGBA(MatrixTemplate<ColorRGBA>::get(_currentColorPosition.y,_currentColorPosition.x));
                   setSpinsColor();
                   onColorChange();
-                  onMouseHold(evt);
+                  onMouseDrag(evt);
                } else if (evt.getState() == MouseEvent::UP) {
                   kernel->unlockMouseUse(this);
                }

@@ -736,7 +736,7 @@ std::string CodeGenerator::createCustomClassCodeH(scv::Component *comp) {
 std::string CodeGenerator::CallbacksCode(int type){
    std::string code = 
    "   virtual void onMouseClick(const scv::MouseEvent &evt);\n"
-   "   virtual void onMouseHold (const scv::MouseEvent &evt);\n"
+   "   virtual void onMouseDrag (const scv::MouseEvent &evt);\n"
    "   virtual void onMouseOver (const scv::MouseEvent &evt);\n"
    "   virtual void onMouseUp   (const scv::MouseEvent &evt);\n"
    "   virtual void onMouseWheel(const scv::MouseEvent &evt);\n"
@@ -924,7 +924,7 @@ std::string CodeGenerator::createCustomClassCodeCpp(scv::Component *comp) {
    }
 
    code += "\nvoid " + ComponentName + "::onMouseClick(const scv::MouseEvent &evt) {\n}";
-   code += "\nvoid " + ComponentName + "::onMouseHold(const scv::MouseEvent &evt) {\n}";
+   code += "\nvoid " + ComponentName + "::onMouseDrag(const scv::MouseEvent &evt) {\n}";
    code += "\nvoid " + ComponentName + "::onMouseOver(const scv::MouseEvent &evt) {\n}";
    code += "\nvoid " + ComponentName + "::onMouseUp(const scv::MouseEvent &evt) {\n}";
    code += "\nvoid " + ComponentName + "::onMouseWheel(const scv::MouseEvent &evt) {\n}";
@@ -1034,7 +1034,7 @@ void CodeGenerator::generateCode(bool customClass) {
       "   //SCVCallbacks\n"
       "   ///////////////////////////////////////////////////////////\n"
       "   virtual void onMouseClick(const scv::MouseEvent &evt);\n"
-      "   virtual void onMouseHold (const scv::MouseEvent &evt);\n"
+      "   virtual void onMouseDrag (const scv::MouseEvent &evt);\n"
       "   virtual void onMouseOver (const scv::MouseEvent &evt);\n"
       "   virtual void onMouseUp   (const scv::MouseEvent &evt);\n"
       "   virtual void onMouseWheel(const scv::MouseEvent &evt);\n"
@@ -1087,7 +1087,7 @@ void CodeGenerator::generateCode(bool customClass) {
       "\n"
       "void Application::onMouseClick(const scv::MouseEvent &evt) {\n"
       "}\n"
-      "void Application::onMouseHold(const scv::MouseEvent &evt) {\n"
+      "void Application::onMouseDrag(const scv::MouseEvent &evt) {\n"
       "}\n"
       "void Application::onMouseOver(const scv::MouseEvent &evt) {\n"
       "}\n"
@@ -1175,7 +1175,7 @@ std::string CodeGenerator::generateCodeAppH(void)
    applicationDotH += "   //SCVCallbacks\n";
    applicationDotH += "   ///////////////////////////////////////////////////////////\n";
    applicationDotH += "   virtual void onMouseClick(const scv::MouseEvent &evt);\n";
-   applicationDotH += "   virtual void onMouseHold (const scv::MouseEvent &evt);\n";
+   applicationDotH += "   virtual void onMouseDrag (const scv::MouseEvent &evt);\n";
    applicationDotH += "   virtual void onMouseOver (const scv::MouseEvent &evt);\n";
    applicationDotH += "   virtual void onMouseUp   (const scv::MouseEvent &evt);\n";
    applicationDotH += "   virtual void onMouseWheel(const scv::MouseEvent &evt);\n";
@@ -1236,7 +1236,7 @@ std::string CodeGenerator::generateCodeAppCpp(void)
    applicationDotCpp += "\n";
    applicationDotCpp += "void Application::onMouseClick(const scv::MouseEvent &evt) {\n";
    applicationDotCpp += "}\n";
-   applicationDotCpp += "void Application::onMouseHold(const scv::MouseEvent &evt) {\n";
+   applicationDotCpp += "void Application::onMouseDrag(const scv::MouseEvent &evt) {\n";
    applicationDotCpp += "}\n";
    applicationDotCpp += "void Application::onMouseOver(const scv::MouseEvent &evt) {\n";
    applicationDotCpp += "}\n";

@@ -296,7 +296,7 @@ void Slider::processMouse(const scv::MouseEvent &evt) {
 		 double value = (static_cast<double>(evt.getPosition().x-(getAbsolutePosition().x))/(getWidth())) * (static_cast<double>(getMaxValue()-getMinValue())) + static_cast<double>(getMinValue());
          setValue(value);
       } else if (evt.getState() == MouseEvent::HOLD && isDragging() == false) {
-         onMouseHold(evt);
+         onMouseDrag(evt);
          double value = (static_cast<double>(evt.getPosition().x-(getAbsolutePosition().x))/(getWidth())) * (static_cast<double>(getMaxValue()-getMinValue())) +static_cast<double>(getMinValue());
 		 setValue(value);
          cursor->requestDefaultCursor(kernel->glfwWindow);

@@ -331,7 +331,7 @@ void Kernel::cbCursorPosition(GLFWwindow* window, double xpos, double ypos)
 	if (menu->processMouse(evt) == false && ifh->processMouse(evt) == false) {
 		//kernel callback
 		if (evt.getState() == MouseEvent::HOLD) {
-			kernel->onMouseHold(evt);
+			kernel->onMouseDrag(evt);
 		}
 		else if (evt.getState() == MouseEvent::MOTION) {
 			kernel->onMouseOver(evt);

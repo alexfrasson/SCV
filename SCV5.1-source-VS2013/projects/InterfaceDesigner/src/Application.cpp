@@ -213,7 +213,7 @@ void Application::init(void) {
 void Application::onMouseClick(const scv::MouseEvent &evt) {   
 }
 
-void Application::onMouseHold(const scv::MouseEvent &evt) {
+void Application::onMouseDrag(const scv::MouseEvent &evt) {
 }
 void Application::onMouseOver(const scv::MouseEvent &evt) {
 }

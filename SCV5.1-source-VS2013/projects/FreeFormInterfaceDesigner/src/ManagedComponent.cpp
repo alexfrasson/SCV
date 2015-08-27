@@ -86,7 +86,7 @@ std::string ManagedComponent::getDeclarationCode(void) {
       output += "\n";
       output += "   ///////////////////////////////////////////////////////////\n";
       output += "   virtual void onMouseClick(const scv::MouseEvent &evt);\n";
-      output += "   virtual void onMouseHold (const scv::MouseEvent &evt);\n";
+      output += "   virtual void onMouseDrag (const scv::MouseEvent &evt);\n";
       output += "   virtual void onMouseOver (const scv::MouseEvent &evt);\n";
       output += "   virtual void onMouseUp   (const scv::MouseEvent &evt);\n";
       output += "   virtual void onMouseWheel(const scv::MouseEvent &evt);\n";
@@ -160,7 +160,7 @@ std::string ManagedComponent::getImplementationCode(void) {
       output += "\n";
       output += "void " + getClassName() + "::onMouseClick(const scv::MouseEvent &evt) {\n";
       output += "}\n";
-      output += "void " + getClassName() + "::onMouseHold(const scv::MouseEvent &evt) {\n";
+      output += "void " + getClassName() + "::onMouseDrag(const scv::MouseEvent &evt) {\n";
       output += "}\n";
       output += "void " + getClassName() + "::onMouseOver(const scv::MouseEvent &evt) {\n";
       output += "}\n";

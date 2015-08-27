@@ -36,7 +36,7 @@ public:
    void update();
    // Esta funcao sera chamada enquanto o usuario manter o mouse pressionado
    // sobre o canvas.
-   void onMouseHold(const scv::MouseEvent&);
+   void onMouseDrag(const scv::MouseEvent&);
 
 private:
 
@@ -94,7 +94,7 @@ void onKeyPressed(const scv::KeyEvent &evt)
 
 }
 
-void MyCanvas::onMouseHold(const scv::MouseEvent& evt)
+void MyCanvas::onMouseDrag(const scv::MouseEvent& evt)
 {
    // redimensiona o quadrado, resolucao do circulo e velocidade do pointeiro
    pos = evt.getPosition();

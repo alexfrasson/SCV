@@ -26,7 +26,7 @@ public:
    //SCVCallbacks
    ///////////////////////////////////////////////////////////
    virtual void onMouseClick(const scv::MouseEvent &evt);
-   virtual void onMouseHold (const scv::MouseEvent &evt);
+   virtual void onMouseDrag (const scv::MouseEvent &evt);
    virtual void onMouseOver (const scv::MouseEvent &evt);
    virtual void onMouseUp   (const scv::MouseEvent &evt);
    virtual void onMouseWheel(const scv::MouseEvent &evt);
@@ -130,7 +130,7 @@ void Application::init(void) {
 
 void Application::onMouseClick(const scv::MouseEvent &evt) {
 }
-void Application::onMouseHold(const scv::MouseEvent &evt) {
+void Application::onMouseDrag(const scv::MouseEvent &evt) {
 }
 void Application::onMouseOver(const scv::MouseEvent &evt) {
 }

@@ -266,7 +266,7 @@ void Spinner::processMouse(const scv::MouseEvent &evt) {
          evt.getState() == MouseEvent::CLICK) {
             _isDragging = false;
       } else if (evt.getState() == MouseEvent::HOLD && isDragging() == false) {
-         onMouseHold(evt);
+         onMouseDrag(evt);
       }
    }
 }

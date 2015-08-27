@@ -220,7 +220,7 @@ void Component::processMouse(const scv::MouseEvent &evt) {
                //cursor->setGlutCursor(GLUT_CURSOR_CYCLE);
             }
             _isHolded = true;
-            onMouseHold(evt - currPosition);
+            onMouseDrag(evt - currPosition);
          } else {
             _isHolded = false;
          }
