@@ -98,6 +98,7 @@ void Canvas::lined(double x1, double y1, double x2, double y2)
 	glVertex2d(x2, y2);
 	glEnd();
 }
+
 void Canvas::line(const scv::Point &p0, const scv::Point &p1)
 {
 	glBegin(GL_LINES);
@@ -106,6 +107,13 @@ void Canvas::line(const scv::Point &p0, const scv::Point &p1)
 	glEnd();
 }
 
+void Canvas::line(int x0, int y0, int x1, int y1)
+{
+	glBegin(GL_LINES);
+	glVertex2i(x0, y0);
+	glVertex2i(x1, y1);
+	glEnd();
+}
 
 void Canvas::rectf(float x1, float y1, float x2, float y2)
 {
@@ -232,6 +240,7 @@ void Canvas::circled(double x, double y, double radius, int div)
 	}
 	glEnd();
 }
+
 void Canvas::circle(const scv::Point &p, double radius, int div)
 {
 	double ang, x1, y1;
@@ -242,6 +251,20 @@ void Canvas::circle(const scv::Point &p, double radius, int div)
 		x1 = (cos(ang)*radius);
 		y1 = (sin(ang)*radius);
 		glVertex2d(x1 + p.x, y1 + p.y);
+	}
+	glEnd();
+}
+
+void Canvas::circle(int x, int y, double radius, int div)
+{
+	double ang, x1, y1;
+	double inc = PI_2 / div;
+	glBegin(GL_LINE_LOOP);
+	for (ang = 0; ang<6.27; ang += inc)
+	{
+		x1 = (cos(ang)*radius);
+		y1 = (sin(ang)*radius);
+		glVertex2d(x1 + x, y1 + y);
 	}
 	glEnd();
 }

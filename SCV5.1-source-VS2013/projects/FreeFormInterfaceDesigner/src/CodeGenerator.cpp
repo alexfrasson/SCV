@@ -740,12 +740,8 @@ std::string CodeGenerator::CallbacksCode(int type){
    "   virtual void onMouseOver (const scv::MouseEvent &evt);\n"
    "   virtual void onMouseUp   (const scv::MouseEvent &evt);\n"
    "   virtual void onMouseWheel(const scv::MouseEvent &evt);\n"
-   "\n"
-   //"   virtual void onKeyPressed(const scv::KeyEvent &evt);\n"
-   //"   virtual void onKeyUp     (const scv::KeyEvent &evt);\n"
    "   virtual void onKey       (const scv::KeyEvent &evt);\n"
    "   virtual void onChar      (const unsigned int &character, const int &modifier);\n"
-   "\n"
    "   virtual void onSizeChange(void);\n"
    "   virtual void onPositionChange(void);\n";
 
@@ -928,8 +924,6 @@ std::string CodeGenerator::createCustomClassCodeCpp(scv::Component *comp) {
    code += "\nvoid " + ComponentName + "::onMouseOver(const scv::MouseEvent &evt) {\n}";
    code += "\nvoid " + ComponentName + "::onMouseUp(const scv::MouseEvent &evt) {\n}";
    code += "\nvoid " + ComponentName + "::onMouseWheel(const scv::MouseEvent &evt) {\n}";
-   //code += "\nvoid " + ComponentName + "::onKeyPressed(const scv::KeyEvent &evt) {\n}";
-   //code += "\nvoid " + ComponentName + "::onKeyUp(const scv::KeyEvent &evt) {\n}";
    code += "\nvoid " + ComponentName + "::onKey(const scv::KeyEvent &evt) {\n}";
    code += "\nvoid " + ComponentName + "::onChar(const unsigned int &character, const int &modifier) {\n}";
    code += "\nvoid " + ComponentName + "::onSizeChange(void) {\n}";
@@ -1038,12 +1032,8 @@ void CodeGenerator::generateCode(bool customClass) {
       "   virtual void onMouseOver (const scv::MouseEvent &evt);\n"
       "   virtual void onMouseUp   (const scv::MouseEvent &evt);\n"
       "   virtual void onMouseWheel(const scv::MouseEvent &evt);\n"
-      "\n"
-      //"   virtual void onKeyPressed(const scv::KeyEvent &evt);\n"
-      //"   virtual void onKeyUp     (const scv::KeyEvent &evt);\n"
 	  "   virtual void onKey       (const scv::KeyEvent &evt);\n"
 	  "   virtual void onChar      (const unsigned int &character, const int &modifier);\n"
-      "\n"
       "   virtual void onSizeChange(void);\n"
       "   virtual void onPositionChange(void);\n"
       "   ///////////////////////////////////////////////////////////\n"
@@ -1095,16 +1085,10 @@ void CodeGenerator::generateCode(bool customClass) {
       "}\n"
       "void Application::onMouseWheel(const scv::MouseEvent &evt) {\n"
       "}\n"
-      "\n"
-      //"void Application::onKeyPressed(const scv::KeyEvent &evt) {\n"
-      //"}\n"
-      //"void Application::onKeyUp(const scv::KeyEvent &evt) {\n"
-      //"}\n"
 	  "void Application::onKey(const scv::KeyEvent &evt) {\n"
 	  "}\n"
 	  "void Application::onChar(const unsigned int &character, const int &modifier) {\n"
 	  "}\n"
-      "\n"
       "void Application::onSizeChange(void) {\n"
       "   _mainPanel->setSize(getWidth(), getHeight());\n"
       "}\n"
@@ -1179,12 +1163,8 @@ std::string CodeGenerator::generateCodeAppH(void)
    applicationDotH += "   virtual void onMouseOver (const scv::MouseEvent &evt);\n";
    applicationDotH += "   virtual void onMouseUp   (const scv::MouseEvent &evt);\n";
    applicationDotH += "   virtual void onMouseWheel(const scv::MouseEvent &evt);\n";
-   applicationDotH += "\n";
-   //applicationDotH += "   virtual void onKeyPressed(const scv::KeyEvent &evt);\n";
-   //applicationDotH += "   virtual void onKeyUp     (const scv::KeyEvent &evt);\n";
    applicationDotH += "   virtual void onKey       (const scv::KeyEvent &evt);\n";
    applicationDotH += "   virtual void onChar      (const unsigned int &character, const int &modifier);\n";
-   applicationDotH += "\n";
    applicationDotH += "   virtual void onSizeChange(void);\n";
    applicationDotH += "   virtual void onPositionChange(void);\n";
    applicationDotH += "   ///////////////////////////////////////////////////////////\n";
@@ -1244,16 +1224,10 @@ std::string CodeGenerator::generateCodeAppCpp(void)
    applicationDotCpp += "}\n";
    applicationDotCpp += "void Application::onMouseWheel(const scv::MouseEvent &evt) {\n";
    applicationDotCpp += "}\n";
-   applicationDotCpp += "\n";
-   //applicationDotCpp += "void Application::onKeyPressed(const scv::KeyEvent &evt) {\n";
-   //applicationDotCpp += "}\n";
-   //applicationDotCpp += "void Application::onKeyUp(const scv::KeyEvent &evt) {\n";
-   //applicationDotCpp += "}\n";
    applicationDotCpp += "void Application::onKey(const scv::KeyEvent &evt) {\n";
    applicationDotCpp += "}\n";
    applicationDotCpp += "void Application::onChar(const unsigned int &character, const int &modifier) {\n";
    applicationDotCpp += "}\n";
-   applicationDotCpp += "\n";
    applicationDotCpp += "void Application::onSizeChange(void) {\n";
    applicationDotCpp += "   _mainPanel->setSize(getWidth(), getHeight());\n";
    applicationDotCpp += "}\n";

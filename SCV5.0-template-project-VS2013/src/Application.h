@@ -16,14 +16,12 @@ public:
    //SCVCallbacks
    ///////////////////////////////////////////////////////////
    virtual void onMouseClick(const scv::MouseEvent &evt);
-   virtual void onMouseHold (const scv::MouseEvent &evt);
+   virtual void onMouseDrag (const scv::MouseEvent &evt);
    virtual void onMouseOver (const scv::MouseEvent &evt);
    virtual void onMouseUp   (const scv::MouseEvent &evt);
    virtual void onMouseWheel(const scv::MouseEvent &evt);
-
    virtual void onKey       (const scv::KeyEvent &evt);
    virtual void onChar      (const unsigned int &character, const int &modifier);
-
    virtual void onSizeChange(void);
    virtual void onPositionChange(void);
    ///////////////////////////////////////////////////////////

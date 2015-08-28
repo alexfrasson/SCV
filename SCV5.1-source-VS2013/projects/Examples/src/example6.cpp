@@ -33,7 +33,7 @@ public:
    void update();
    // Esta funcao sera chamada enquanto o usuario manter o mouse pressionado
    // sobre o canvas.
-   void onMouseHold(const scv::MouseEvent&);
+   void onMouseDrag(const scv::MouseEvent&);
 
 private:
    static const int RECT_SIZE = 8;
@@ -107,7 +107,7 @@ void MyCanvas::update() {
       cur_speed.y = -cur_speed.y;
 }
 
-void MyCanvas::onMouseHold(const scv::MouseEvent& evt)
+void MyCanvas::onMouseDrag(const scv::MouseEvent& evt)
 {
    // Move os triangulos para a posicao onde o mouse esta.
    pos = evt.getPosition();

@@ -27,7 +27,7 @@ public:
    void linef(float x1, float y1, float x2, float y2);
    void lined(double x1, double y1, double x2, double y2);
    void line(const scv::Point &p0, const scv::Point &p1);
-
+	void line(int x0, int y0, int x1, int y1);
 
    //rectangles
    void rectf(float x1, float y1, float x2, float y2);
@@ -44,6 +44,7 @@ public:
    void circlef(float x, float y, float radius, int div);
    void circled(double x, double y, double radius, int div);
    void circle(const scv::Point &p, double radius, int div);
+	void circle(int x, int y, double radius, int div);
    void circleFillf(float x, float y, float radius, int div);
    void circleFilld(double x, double y, double radius, int div);
    void circleFill(const scv::Point &p, double radius, int div);
