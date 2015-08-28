@@ -20,6 +20,7 @@ public:
    Button(const scv::Point &p, const std::string &str);
    virtual ~Button(void) {}
 
+	void initialize();
    virtual void display(void);
 
 

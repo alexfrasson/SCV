@@ -34,7 +34,7 @@ public:
    std::string getFilePath();
 
 private:
-   char* path;
+   char* path = NULL;
 };
 
 } // namespace scv

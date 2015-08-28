@@ -38,6 +38,7 @@ public:
    inline Point & translateY(int w);
    
    const Point inverse(void) const;
+	void toFiveMultiple();
 
    int x, y;
 };

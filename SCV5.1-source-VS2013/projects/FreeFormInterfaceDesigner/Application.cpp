@@ -16,7 +16,7 @@ void Application::init(void) {
 
    addComponent(_mainPanel);
 
-   Canvas0 *canvas0 = new Canvas0(scv::Point(464,339), scv::Point(664, 539));
+   Canvas0 *canvas0 = new Canvas0(scv::Point(341,280), scv::Point(541, 480));
    addComponent(canvas0);
 
 }

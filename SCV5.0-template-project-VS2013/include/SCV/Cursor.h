@@ -71,7 +71,7 @@ public:
       if (_isShowingCursor) {
          _cursorTexture->enable();
          scheme->applyColor(ColorScheme::CURSOR);
-         _cursorTexture->display(Point(p.x,p.y+2), 0, Point(1, 14));
+         _cursorTexture->display(Point(p.x+2,p.y+2), 0, Point(1, 13));
          _cursorTexture->disable();
       }
    }
