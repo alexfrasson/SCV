@@ -72,11 +72,14 @@
       <AdditionalDependencies>glew32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Lib>
-      <AdditionalDependencies>glew32s.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glew32.lib;glew32s.lib;glfw3.lib;glfw3dll.lib;freetype.lib;ftgl_static.lib;ftgl_static_D.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
     <Lib>
       <AdditionalLibraryDirectories>$(SolutionDir)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
+    <PostBuildEvent>
+      <Command>LIB /out:scv5d.lib glew32.lib glew32s.lib glfw3.lib glfw3dll.lib freetype.lib ftgl_static.lib ftgl_static_D.lib glu32.lib opengl32.lib</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>

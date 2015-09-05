@@ -59,7 +59,7 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glew32.lib;glu32.lib;opengl32.lib;glfw3dll.lib;scv5d.lib;freetype.lib;ftgl_static.lib;ftgl_static_D.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glu32.lib;opengl32.lib;scv5d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

@@ -664,7 +664,8 @@ void Kernel::showCopyrights(void) {
       " Vinicius Gottin                 Developer  (SCV 1.0)             " << std::endl <<
       " Vitor Conrado Gomes                                              " << std::endl <<
       " Francisco Avelar                                                 " << std::endl <<
-	  " Alex Thomas A. Frasson          Developer  (SCV 5.0)             " << std::endl;
+	   " Alex Thomas A. Frasson          Developer  (SCV 5.0)             " << std::endl <<
+	   " Estevan Preuss da Silva         Developer  (SCV 5.1)             " << std::endl;
 
 
    // scv logo and verison
@@ -689,7 +690,7 @@ void Kernel::showCopyrights(void) {
       " ###########                  #####            ###   #   ######################" << std::endl <<
       " ##########                  #################  ###     #######################" << std::endl <<
 	  " #########  ###################################  ###   ######               ###" << std::endl <<
-	  " ########  ##################################################  Version 5.0  ###" << std::endl <<
+	  " ########  ##################################################  Version 5.1  ###" << std::endl <<
 	  " ############################################################               ###" << std::endl <<
       " ##############################################################################"
       << std::endl;
