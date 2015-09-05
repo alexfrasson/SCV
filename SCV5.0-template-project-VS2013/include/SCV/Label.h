@@ -12,6 +12,7 @@
 #include "FontTahoma.h"
 #include "Color4f.h"
 #include "ColorScheme.h"
+#include "FontFreeType.h"
 
 namespace scv {
 

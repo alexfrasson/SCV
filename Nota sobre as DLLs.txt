@@ -1,0 +1,13 @@
+- Sobre as DLLs -
+
+Para as DLLs funcionarem, precisam estar dentro da pasta do .exe.
+As DLLs freetype6 e zlib1 podem ser colocadas
+dentro da pasta lib do projeto, contanto que
+o seguinte código esteja ativado para
+fazer com que o programa use as DLLs durante
+o debugging.
+
+Project -> Properties -> Configuration Properties ->
+Debugging -> Environment
+
+PATH=$(ProjectDir)lib;$(TargetDir)\DLLS

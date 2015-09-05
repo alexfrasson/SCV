@@ -1,0 +1,16 @@
+- Nota sobre o combinamento de LIBs - 
+
+1)
+Para combinar bibliotecas estáticas, vamos em
+Project -> Property -> Configuration Properties ->
+Librarian -> Additional Dependencies. 
+Dentro das dependências, adicionamos as bibliotecas 
+que queremos combinar em uma só.
+
+2)
+Em Build Events -> Post-Build Event, adicionamos o código:
+
+LIB /out:scv5d.lib freetype.lib ftgl_static.lib
+
+Com isso, as bibliotecas selecionadas vão ser unidas
+em scv5d, que é o output do projeto.

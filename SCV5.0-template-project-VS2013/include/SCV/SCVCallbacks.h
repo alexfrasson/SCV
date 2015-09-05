@@ -18,7 +18,7 @@ public:
 
    //SCVCallbacks
    virtual void onMouseClick(const scv::MouseEvent &evt) {}
-   virtual void onMouseHold (const scv::MouseEvent &evt) {}
+   virtual void onMouseDrag (const scv::MouseEvent &evt) {}
    virtual void onMouseOver (const scv::MouseEvent &evt) {}
    virtual void onMouseUp   (const scv::MouseEvent &evt) {}
    virtual void onMouseWheel(const scv::MouseEvent &evt) {}

@@ -58,6 +58,8 @@ double Counter::getStepValue(void) const {
 
 void Counter::setMinValue(double value) {
    _minValue = value;
+	if (getValue() < _minValue)
+		setValue(_minValue);
 }
 
 double Counter::getMinValue(void) const {
@@ -66,6 +68,8 @@ double Counter::getMinValue(void) const {
 
 void Counter::setMaxValue(double value) {
    _maxValue = value;
+	if (getValue() > _maxValue)
+		setValue(_maxValue);
 }
 
 double Counter::getMaxValue(void) const {

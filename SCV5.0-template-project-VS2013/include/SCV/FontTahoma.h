@@ -30,7 +30,7 @@ public:
    }
 
    inline int getCharWidth(unsigned char character) const {
-      return (character == ' ')? s_spaceSize : s_charactersWidth[character];
+		return (character == ' ') ? s_spaceSize : s_charactersWidth[character];
    }
 
    inline int getHeight(void) const {

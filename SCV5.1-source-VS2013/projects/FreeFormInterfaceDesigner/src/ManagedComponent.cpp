@@ -90,10 +90,8 @@ std::string ManagedComponent::getDeclarationCode(void) {
       output += "   virtual void onMouseOver (const scv::MouseEvent &evt);\n";
       output += "   virtual void onMouseUp   (const scv::MouseEvent &evt);\n";
       output += "   virtual void onMouseWheel(const scv::MouseEvent &evt);\n";
-      output += "\n";
-	  output += "   virtual void onKey       (const scv::KeyEvent &evt);\n";
-	  output += "   virtual void onChar      (const unsigned int &character, const int &modifier);\n";
-      output += "\n";
+	   output += "   virtual void onKey       (const scv::KeyEvent &evt);\n";
+	   output += "   virtual void onChar      (const unsigned int &character, const int &modifier);\n";
       output += "   virtual void onSizeChange(void);\n";
       output += "   virtual void onPositionChange(void);\n";
       output += getCustomDeclarationCode();
@@ -169,9 +167,9 @@ std::string ManagedComponent::getImplementationCode(void) {
       output += "void " + getClassName() + "::onMouseWheel(const scv::MouseEvent &evt) {\n";
       output += "}\n";
       output += "\n";
-	  output += "void " + getClassName() + "::onKey(const scv::KeyEvent &evt) {\n";
-	  output += "}\n";
-	  output += "void " + getClassName() + "::onChar(const unsigned int &character, const int &modifier) {\n";
+	   output += "void " + getClassName() + "::onKey(const scv::KeyEvent &evt) {\n";
+	   output += "}\n";
+	   output += "void " + getClassName() + "::onChar(const unsigned int &character, const int &modifier) {\n";
       output += "}\n";
       output += "\n";
       output += "void " + getClassName() + "::onSizeChange(void) {\n";
