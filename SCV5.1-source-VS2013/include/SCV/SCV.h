@@ -5,7 +5,7 @@ Developed at Federal University of Santa Maria - UFSM
 LaCA - Computer Applied Laboratory - Laboratório de Computação Aplicada
 webpage: www.inf.ufsm.br/~pozzer/scv
 email: pozzer@inf.ufsm.br
-2007-2015
+2007-2012 
 
 */
 
@@ -18,11 +18,13 @@ email: pozzer@inf.ufsm.br
    #endif // _WIN32
 #endif // _MSC_VER
 
-#define SCV_VERSION 5.1
-#define SCV_VERSION_STRING "SCV v5.1"
+#define SCV_VERSION 5.0
+#define SCV_VERSION_STRING "SCV v5.0"
 
 #include "stdafx.h"
+
 #include "Kernel.h"
+
 #include "Button.h"
 #include "Canvas.h"
 #include "CheckBox.h"
@@ -49,6 +51,7 @@ email: pozzer@inf.ufsm.br
 #include "util.h"
 #include "GenericTree.h"
 #include "GenericNode.h"
+
 #include "GroupLayout.h"
 #include "SequentialGroup.h"
 #include "ParallelGroup.h"

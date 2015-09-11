@@ -15,6 +15,7 @@ email: pozzer@inf.ufsm.br
 //#include "stdafx.h"
 
 #include "Singleton.h"
+#include "FontTahoma.h"
 
 #include "Component.h"
 #include "ComponentTexture.h"

@@ -9,7 +9,7 @@
 
 #include "Component.h"
 #include "ComponentTexture.h"
-
+#include "FontTahoma.h"
 #include "Color4f.h"
 #include "ColorScheme.h"
 #include "FontFreeType.h"
