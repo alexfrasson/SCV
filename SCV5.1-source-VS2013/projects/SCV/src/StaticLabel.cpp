@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "StaticLabel.h"
+#include "FontTahoma.h"
 
 namespace scv {
 

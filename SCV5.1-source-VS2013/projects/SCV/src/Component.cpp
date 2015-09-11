@@ -93,7 +93,7 @@ void Component::setWidth(const int width) {
    } else {
       _p2.x = _p1.x + width;
    }
-   onSizeChange();
+   onSizeChange();	
 }
 
 void Component::setHeight(const int height) {
@@ -456,7 +456,9 @@ Point Component::getMaximumSize(void) const {
 
 void Component::setMinimumSize(const scv::Point &size) {
    if (size <= getPreferredSize() && size <= getMaximumSize() && size > Point(0, 0)) {
-      _minimumSize = size;
+      //_minimumSize = size;
+		// O tamanho mínimo de um componente agora é fixado.
+		_minimumSize = Point(20, 20);
    }
 }
 

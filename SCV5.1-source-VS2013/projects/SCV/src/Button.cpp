@@ -1,5 +1,4 @@
 #include "stdafx.h"
-
 #include "Button.h"
 #include "Kernel.h"
 

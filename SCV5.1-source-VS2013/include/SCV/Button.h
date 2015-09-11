@@ -23,7 +23,6 @@ public:
 	void initialize();
    virtual void display(void);
 
-
 protected:
    void createTexture(void);
 };

@@ -7,7 +7,8 @@
 #ifndef __SCV_STATIC_LABEL_H__
 #define __SCV_STATIC_LABEL_H__
 
-#include "FontTahoma.h"
+#include "Singleton.h"
+#include "ComponentTexture.h"
 #include "Color4f.h"
 #include "ColorScheme.h"
 #include "FontFreeType.h"

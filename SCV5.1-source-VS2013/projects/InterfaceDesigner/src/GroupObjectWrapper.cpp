@@ -74,8 +74,8 @@ void GroupObjectWrapper::display(void) {
    ManagedComponent *managed = CodeGenerator::getInstance()->getManagedComponent(getObject());
    if (managed != NULL) {
       _cTexture->enable();
-      int width = scv::FontTahoma::getInstance()->getStringLength(managed->getClassName()) + 1;
-      int height = scv::FontTahoma::getInstance()->getHeight();
+      int width = scv::FontFreeType::getInstance()->getStringLength(managed->getClassName()) + 1;
+      int height = scv::FontFreeType::getInstance()->getHeight();
 
       scv::ColorScheme::getInstance()->applyColor(scv::Color4f(0.5f, 0.5f, 0.5f, 1.f));
 
