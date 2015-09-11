@@ -454,9 +454,10 @@ Point Component::getMaximumSize(void) const {
    }
 }
 
-void Component::setMinimumSize(const scv::Point &size) {
-   if (size <= getPreferredSize() && size <= getMaximumSize() && size > Point(0, 0)) {
-      _minimumSize = size;
+void Component::setMinimumSize(const scv::Point &size) {	
+	if (size <= getPreferredSize() && size <= getMaximumSize() && size > Point(0, 0)) {
+      //_minimumSize = size;		
+		_minimumSize = Point(10, 20); // @epreuss
    }
 }
 
