@@ -88,7 +88,13 @@ void Component::setAbsolutePosition(const Point &position) {
 }
 
 void Component::setWidth(const int width) {
-   if (width < getMinimumSize().x) {
+	/*
+	Labels podem setar o Width com liberdade.
+	Com isso, nunca entram na condição de o tamanho dela
+	ser menor que o tamanho mínimo de um componente,
+	dado por getMinimumSize().
+	*/
+	if (width < getMinimumSize().x && _type != LABEL) {
       _p2.x = _p1.x + getMinimumSize().x;
    } else {
       _p2.x = _p1.x + width;
@@ -456,8 +462,7 @@ Point Component::getMaximumSize(void) const {
 
 void Component::setMinimumSize(const scv::Point &size) {	
 	if (size <= getPreferredSize() && size <= getMaximumSize() && size > Point(0, 0)) {
-      //_minimumSize = size;		
-		_minimumSize = Point(10, 20); // @epreuss
+      _minimumSize = size;			
    }
 }
 
